@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace TechJobsConsole
 {
@@ -118,7 +119,16 @@ namespace TechJobsConsole
 
         private static void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
-            Console.WriteLine("PrintJobs is not implemented yet");
+            //Console.WriteLine("PrintJobs is not implemented yet");
+
+             for (int i=0; i < JobData.AllJobs.Count; i++)
+            {
+                foreach (KeyValuePair<string, string> item in JobData.AllJobs[i])
+                {
+                    Console.WriteLine(item.Key + ": " + item.Value);
+                }
+
+            }
         }
     }
 }
