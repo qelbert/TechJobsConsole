@@ -123,7 +123,7 @@ namespace TechJobsConsole
         {
             if (someJobs.Count == 0)
             {
-                Console.WriteLine("That selection is not available. Please choose one of the available selections.");
+                Console.WriteLine("That selection is not available, or is not properly capitalized. Please choose one of the available selections.");
             }
 
             //Console.WriteLine("PrintJobs is not implemented yet");
