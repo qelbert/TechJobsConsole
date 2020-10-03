@@ -119,18 +119,23 @@ namespace TechJobsConsole
 
         private static void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
-            
-            
-            //Console.WriteLine("PrintJobs is not implemented yet");
-
-             for (int i=0; i < someJobs.Count; i++)
+            if (someJobs.Count == 0)
             {
-                foreach (KeyValuePair<string, string> item in someJobs[i])
-                {
-                    Console.WriteLine(item.Key + ": " + item.Value);
-                }
-                Console.WriteLine("\n*****");
+                Console.WriteLine("That selection is not available. Please choose one of the available selections.");
+            }
 
+            //Console.WriteLine("PrintJobs is not implemented yet");
+            else
+            {
+                for (int i = 0; i < someJobs.Count; i++)
+                {
+                    foreach (KeyValuePair<string, string> item in someJobs[i])
+                    {
+                        Console.WriteLine(item.Key + ": " + item.Value);
+                    }
+                    Console.WriteLine("\n*****");
+
+                }
             }
         }
     }
