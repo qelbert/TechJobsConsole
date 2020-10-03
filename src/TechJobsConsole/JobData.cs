@@ -60,6 +60,38 @@ namespace TechJobsConsole
         }
 
         /*
+         * Returns a list of all jobs within the AllJobs array that contains a value,
+         * without duplicates. 
+         */
+        public static List<Dictionary<string, string>> FindByValue(string value)
+        {
+            // load data, if not already loaded
+            LoadData();
+
+            List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
+
+            string collect = "";
+
+            for (int i = 0; i < AllJobs.Count; i++)
+            {
+                foreach (KeyValuePair<string, string> item in AllJobs[i])
+                {
+                    collect += item.Value.ToLower() + " ";                    
+                }
+
+                if (collect.Contains(value))
+                {
+
+                    jobs.Add(AllJobs[i]);
+                    collect = "";
+                }
+            }
+
+            return jobs;
+
+        }
+
+        /*
          * Load and parse data from job_data.csv
          */
         private static void LoadData()
